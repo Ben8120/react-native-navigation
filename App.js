@@ -8,6 +8,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import Page2Screen from './page2';
 import Page3Screen from './page3';
 import MainTab from './mainTab';
+import DrawerContainer from './testdrawer';
 
 function HomeScreen({ navigation }) {
   const [prodName, setProdName] = useState('nil');
@@ -34,6 +35,10 @@ function HomeScreen({ navigation }) {
       <Button 
         title="Show Tab"
         onPress={() => navigation.push('PageTab')}
+      />
+      <Button
+        title="Experiment the Drawer Navigation"
+        onPress={() => navigation.push('DrawerPage')}
       />
        </View>
   );
@@ -65,6 +70,7 @@ function App() {
         <Stack.Screen name="Page2" component={Page2Screen}/> 
         <Stack.Screen name="Page3" component={Page3Screen}/> 
         <Stack.Screen name="PageTab" component={MainTab}/> 
+        <Stack.Screen name="DrawerPage" component={DrawerContainer}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );
